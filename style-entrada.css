@@ -1,0 +1,142 @@
+/* ESTILIZAÇÃO DA LANDING PAGE AGROFÁCIL PRO */
+:root {
+    --fundo-gradiente: radial-gradient(circle at center, #243526 0%, #182219 100%);
+    --card-entrada: rgba(34, 46, 35, 0.9);
+    --texto: #F1F7F1;
+    --primaria: #00FF66;
+    --detalhe: #FF6600;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background: #182219 !important;
+    background-image: var(--fundo-gradiente) !important;
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.caixa-entrada {
+    background: var(--card-entrada);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 24px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.selo-tech {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--primaria);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.entrada-header h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #FFF;
+    margin-bottom: 8px;
+}
+
+.entrada-header h1 span {
+    color: var(--primaria);
+}
+
+.badge-pro {
+    font-size: 0.9rem;
+    background: var(--detalhe);
+    color: #FFF;
+    padding: 2px 8px;
+    border-radius: 6px;
+    vertical-align: super;
+}
+
+.subtitulo {
+    font-size: 1.05rem;
+    color: #A4BCA4;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.cards-recursos-rapidos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.mini-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 8px;
+    border-radius: 14px;
+}
+
+.mini-card .icone {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.mini-card h3 {
+    font-size: 0.9rem;
+    color: #FFF;
+    margin-bottom: 2px;
+}
+
+.mini-card p {
+    font-size: 0.7rem;
+    color: #8CA28C;
+}
+
+.btn-entrar-hub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #0D441D;
+    color: #FFF;
+    border: 1px solid var(--primaria);
+    text-decoration: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 14px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-entrar-hub:hover {
+    background: var(--primaria);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.nota-seguranca {
+    font-size: 0.75rem;
+    color: #758C75;
+    margin-top: 15px;
+}
+
+.entrada-footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #617561;
+}
+
+.entrada-footer span {
+    color: #A4BCA4;
+}

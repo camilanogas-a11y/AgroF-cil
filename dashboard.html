@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFácil Pro: O Hub do Produtor</title>
+    <link rel="stylesheet" href="style.css?v=7.0">
+</head>
+<body>
+
+    <button id="btn-acessibilidade" class="bolinha-pcd" aria-expanded="false" aria-controls="menu-acessibilidade" aria-label="Opções de Acessibilidade">♿</button>
+
+    <div id="menu-acessibilidade" class="menu-acessibilidade-painel" hidden>
+        <button id="arq-contraste">🌓 Alto Contraste</button>
+        <button id="arq-fonte">🔎 Aumentar Texto</button>
+        <button id="arq-voz">🔊 Ouvir Página</button>
+    </div>
+
+    <header class="main-header">
+        <div class="header-logo">
+            <h1>Agro<span>Fácil</span> <span class="badge-pro">PRO</span></h1>
+            <p class="slogan">Tecnologia de ponta moldada para o campo, do plantio à colheita.</p>
+        </div>
+    </header>
+
+    <main class="container-principal">
+        
+        <section id="cotacoes" class="card-section">
+            <h2><span>📈</span> Painel de Cotações & Tendências</h2>
+            <p class="card-desc">Preços médios com indicativo técnico de projeção para os próximos 7 dias.</p>
+            <div class="grid-cotacoes">
+                <div class="cotacao-item">
+                    <span>🌾 Soja (Saca 60kg)</span>
+                    <strong>R$ 138,50</strong>
+                    <small class="alta">▲ +0.5%</small>
+                    <span class="tag-tendencia alta-bg">🔥 Alta Firme</span>
+                </div>
+                <div class="cotacao-item">
+                    <span>🌽 Milho (Saca 60kg)</span>
+                    <strong>R$ 62,20</strong>
+                    <small class="baixa">▼ -0.2%</small>
+                    <span class="tag-tendencia estavel-bg">⚖️ Estável</span>
+                </div>
+                <div class="cotacao-item">
+                    <span>☕ Café Arábica (Saca)</span>
+                    <strong>R$ 1.045,00</strong>
+                    <small class="alta">▲ +1.1%</small>
+                    <span class="tag-tendencia alta-bg">🔥 Alta Forte</span>
+                </div>
+                <div class="cotacao-item">
+                    <span>🥩 Boi Gordo (Arroba)</span>
+                    <strong>R$ 232,15</strong>
+                    <small class="alta">▲ +0.8%</small>
+                    <span class="tag-tendencia baixa-bg">📉 Queda Sutil</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="compras" class="card-section">
+            <h2><span>🛒</span> Central de Compras Coletivas</h2>
+            <p class="card-desc">Volume conjunto que garante preço de atacado direto de fábrica.</p>
+            
+            <div class="grupo-insumo">
+                <div class="filtro-insumo-container">
+                    <input type="text" id="filtro-insumo" placeholder="🔍 Digite para filtrar os insumos disponíveis...">
+                </div>
+
+                <form id="form-compras-coletivas" class="agro-form">
+                    <label for="insumo-selecionado">Escolha o Insumo para o Lote:</label>
+                    <select id="insumo-selecionado" required>
+                        <option value="">Selecione um produto...</option>
+                        <option value="Fertilizante NPK 04-14-08 (Saco 50kg)">Fertilizante NPK 04-14-08 (Saco 50kg) - R$ 135,00</option>
+                        <option value="Calcário Agrícola Dolomítico (Tonelada)">Calcário Agrícola Dolomítico (Tonelada) - R$ 95,00</option>
+                        <option value="Semente de Soja Certificada (Bag 40M)">Semente de Soja Certificada (Bag 40M) - R$ 210,00</option>
+                    </select>
+
+                    <label for="qtd-insumo">Quantidade Desejada:</label>
+                    <input type="number" id="qtd-insumo" placeholder="Ex: 25" min="1" required>
+
+                    <button type="submit" class="btn-acao-comprar">Reservar Insumo e Notificar Grupo</button>
+                </form>
+                
+                <div class="divisor-comunidade">
+                    <p>Quer negociar outros lotes ou falar com a administração?</p>
+                    <a href="https://chat.whatsapp.com/DdG8K9lL3m2K9x7Oq1vR5z" target="_blank" id="btn-comunidade-whats" class="btn-whats-grupo">
+                        💬 Entrar na Comunidade Oficial AgroFácil
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="maquinas" class="card-section">
+            <h2><span>🚜</span> Compartilhamento de Maquinário Nacional</h2>
+            <p class="card-desc">Consulte a frota rural disponível para locação em qualquer município do Brasil.</p>
+            
+            <div class="busca-localizacao-container">
+                <input type="text" id="busca-maquina-cidade" placeholder="Digite sua cidade (Ex: Sorriso, Rio Verde...)">
+                <button id="btn-filtrar-maquinas" class="btn-buscar">Buscar Frota</button>
+            </div>
+
+            <div id="container-maquinas-interativo">
+                <div id="lista-maquinas" class="lista-maquinas"></div>
+                <div id="maquinas-ocultas" class="itens-ocultos"></div>
+            </div>
+            <button id="btn-ver-mais-maquinas" class="btn-ver-mais" style="display: none;">👇 Ver Mais Modelos</button>
+        </section>
+
+        <section id="alertas" class="card-section">
+            <h2><span>⚠️</span> Diagnóstico Climático & Sanitário Digital</h2>
+            <p class="card-desc">Monitore pragas e receba diretrizes técnicas imediatas no seu WhatsApp.</p>
+            
+            <form id="form-alertas" class="agro-form">
+                <div class="form-grid">
+                    <div>
+                        <label for="regiao">Sua Cidade e Estado:</label>
+                        <input type="text" id="regiao" placeholder="Ex: Sorriso - MT" required>
+                    </div>
+                    <div>
+                        <label for="cultura">Sua Cultura Ativa:</label>
+                        <select id="cultura" required>
+                            <option value="">Selecione a cultura...</option>
+                            <option value="Soja">Soja</option>
+                            <option value="Milho">Milho</option>
+                            <option value="Café">Café</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="contato">Seu WhatsApp (Com DDD, apenas números):</label>
+                <input type="tel" id="contato" placeholder="Ex: 66999999999" required>
+
+                <button type="submit" class="btn-submit">Gerar Relatório Técnico e Chamar no WhatsApp</button>
+            </form>
+        </section>
+
+        <section id="empregos" class="card-section">
+            <h2><span>💼</span> Balcão de Oportunidades do Agronegócio</h2>
+            <p class="card-desc">Pesquise por vagas operacionais ou técnicas de campo em todo o país.</p>
+            
+            <div class="busca-localizacao-container">
+                <input type="text" id="busca-vaga-cidade" placeholder="Digite sua cidade (Ex: Uberlândia, Barreiras...)">
+                <button id="btn-filtrar-vagas" class="btn-buscar">Pesquisar Vagas</button>
+            </div>
+
+            <div id="container-vagas-interativo">
+                <div id="lista-vagas" class="lista-vagas"></div>
+                <div id="vagas-ocultas" class="itens-ocultos"></div>
+            </div>
+            <button id="btn-ver-mais-vagas" class="btn-ver-mais" style="display: none;">👇 Ver Mais Vagas</button>
+        </section>
+
+        <section id="historico" class="card-section">
+            <h2><span>⏳</span> Suas Atividades Recentes</h2>
+            <p class="card-desc">Histórico local das últimas operações e consultas salvas neste aparelho.</p>
+            <div id="lista-historico" class="lista-historico-container"></div>
+            <button id="btn-limpar-historico" class="btn-limpar-dados" style="display: none;">🗑️ Limpar Meu Histórico</button>
+        </section>
+    </main>
+
+    <div id="modal-vaga" class="modal-fundo">
+        <div class="modal-conteudo">
+            <h3 id="modal-titulo-vaga">Vaga Selecionada</h3>
+            <div class="modal-linhas">
+                <p><strong>📍 Localização:</strong> <span id="modal-localizacao">---</span></p>
+                <p><strong>💰 Remuneração:</strong> <span id="modal-salario">---</span></p>
+                <p><strong>📋 Requisitos:</strong> <span id="modal-requisitos">---</span></p>
+            </div>
+            
+            <form id="form-inscricao-vaga" class="agro-form">
+                <label for="nome-candidato">Seu Nome Completo:</label>
+                <input type="text" id="nome-candidato" required placeholder="Ex: João Silva">
+                <label for="telefone-candidato">Seu Contato:</label>
+                <input type="tel" id="telefone-candidato" required placeholder="Ex: (00) 99999-0000">
+                <button type="submit" class="btn-submit-vaga">Confirmar Envio de Dados</button>
+            </form>
+            <button id="btn-fechar-modal" class="btn-fechar">Fechar Painel</button>
+        </div>
+    </div>
+
+    <div id="popup-notificacao" class="popup-sucesso" hidden role="alert">
+        <div class="popup-conteudo">
+            <span id="popup-texto"></span>
+            <button id="fechar-popup">Confirmar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>AgroFácil PRO</strong> — O Ecossistema Digital do Produtor.</p>
+        <p class="assinatura">Desenvolvido por <span>Camila Nogas</span>.</p>
+    </footer>
+
+    <script src="script.js?v=7.0"></script>
+</body>
+</html>
